@@ -1,8 +1,15 @@
 ﻿
+
 #include "cuda_runtime.h"
 #include "device_launch_parameters.h"
 
 #include <stdio.h>
+
+#ifdef __INTELLISENSE__
+#define __global__
+#define __device__
+#define __host__
+#endif
 
 cudaError_t addWithCuda(int *c, const int *a, const int *b, unsigned int size);
 
@@ -86,7 +93,7 @@ cudaError_t addWithCuda(int *c, const int *a, const int *b, unsigned int size)
         fprintf(stderr, "cudaMemcpy failed!");
         goto Error;
     }
-
+    
     // Launch a kernel on the GPU with one thread for each element.
     addKernel<<<1, size>>>(dev_c, dev_a, dev_b);
 
