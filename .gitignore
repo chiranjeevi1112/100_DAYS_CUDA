@@ -1,0 +1,22 @@
+# Visual Studio
+.vs/
+*.VC.db
+*.opendb
+*.suo
+*.user
+
+# Build files
+Debug/
+Release/
+x64/
+x86/
+*.exe
+*.obj
+*.pdb
+
+# CUDA
+*.cubin
+
+# OS
+.DS_Store
+Thumbs.db
