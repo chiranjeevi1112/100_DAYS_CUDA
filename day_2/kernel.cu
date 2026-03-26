@@ -4,7 +4,7 @@
 
 __device__ float square(int x)
 {
-	return x * x;
+	return x * x *x;
 	//__device__ marked fucntion can only be called from another device fucntion
 	// or a kernel mathod
 }
@@ -16,6 +16,7 @@ __global__ void voidKernel(int* input, int* output, int N) {
 		output[i] = square(input[i]);
 	}
 }
+
 
 int main()
 {
